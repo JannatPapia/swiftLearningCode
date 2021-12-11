@@ -288,15 +288,187 @@ var  counter = 5
 
 while counter > 0 {
     print("hello")
-    counter = counter - 1
+    counter = counter - 1 // my code would crash if i didn't give -1 here
 }
+
+
+/*
+        its pretty much simmiler with while loop
+      Repeat-While Loop
+      repeat {
+        some code
+ }
+ while condition
+ */
+
+var count = 5;
+while count > 0 { // first compiler check first while loop it the condition is true then execute first while loop
+    print("hello")
+    count = count - 1
+}
+repeat{ // if first while loop condition is false then compiler go for 2nd repeat loop after condition first
+    print("hello2")
+    count = count - 1
+} while count > 0
+
+
+
+//             Lesson - 7
+//         topics function part 1
+
+
+
+//    Function
+//    A block of code with a given name that can be excecuted on demand by calling that name.
+
+/*
+       Basic function Syntax
+ 
+       func name(){
+            some code
+                }
+ */
+
+//   print("papia")
+func addTwoNumbers() {
+    
+    let x = 1 // if we change the value then then code will update
+    let y = 2
+    let som = x + y
+    
+    print(som)
+}
+// print(som)  //  the code gets error because constant variable declare in function that can be use only function
+addTwoNumbers()//call function multiple time
+addTwoNumbers() // we can reuse code
+
+// another example
+
+func substractTwoNumbers(){
+    let f = 1
+    let g = 1
+    let h = f - g
+    
+    print(h)
+}
+
+substractTwoNumbers()
+substractTwoNumbers()
+
+
+//           Lesson - 8
+//           function part 2
+//           topics - Method/Function
+
+
+
+//  methods and functions are two different names for the same thing!
+
+
+      /*    function syntax: Return Value
+       
+           func name() -> DataTypes{
+             some code
+             return someValue
+       }
+       
+       */
+
+
+func addTwoNumbersReturn() -> Int{
+       let  a1 = 1
+       let b1 = 1
+    
+    return a1 + b1 // 2
+}
+
+let sum1 = addTwoNumbersReturn()
+print(sum1) // 2
 
 
 
 /*
-   Do while Loop syntax
-   
+         Function Syntax : 1 Parameter
+ 
+         func name(argumentLabel parameterName:DAataAtypes){
+           some code
+ }
  */
+
+
+// example single parameter (its easy but not complete)
+
+func addTwoNumbersSingle(arg para: Int) -> Int {
+    let a2 = para // 2
+    let b2 = 1
+    
+    return a2 + b2 // 2 + 1
+}
+
+let sum2 = addTwoNumbersSingle(arg: 2) //arg 2 passing value
+
+print(sum2) //3
+
+
+/*
+ Function Syntex: Multiple Parameters
+ 
+      func name(arg1 param1:DataType,arg2 prm2:DtaTypes) {
+        some code
+ }
+ */
+
+
+// multiple function example
+
+
+// func addTwoNumbersMultiple(arg para: Int, arg2 para2: Int) -> Int
+func addTwoNumbersMultiple(para: Int, para2: Int) -> Int // we can also change the parameter
+{
+   // let a3 = para // 2
+   // let b3 = para2 //3
+    
+    // return a3 + b3 // 2 + 3
+    return para + para2 // now function is pretty simple
+}
+
+//let sum3 = addTwoNumbersMultiple(arg: 2, arg2: 3) //arg 2 passing value
+let sum3 = addTwoNumbersMultiple(para: 2, para2: 3) //
+
+print(sum3) // 5
+
+
+
+// example meaningful parameter
+
+
+func addTwoNumbersMeaning(using number1: Int, and number2: Int) -> Int {
+    return number1 + number2
+}
+let sum4 = addTwoNumbersMeaning(using: 2, and: 7)
+
+print(sum4)
+
+
+
+// short code example
+
+func addTwoNumbersShort(_ number3: Int, _ number4: Int) -> Int {
+    return number3 + number4
+}
+let sum5 = addTwoNumbersShort(3, 4)
+
+print(sum5)
+
+
+
+//                 Lesson - 9
+//                 Topics - classes
+
+
+
+
+
 
 
 
