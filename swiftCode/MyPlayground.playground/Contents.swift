@@ -573,6 +573,23 @@ myRide.drive() // calling drive function
 
 */
 
+
+/*
+       Class Inheritance
+ 
+        Car      Known as the superclass(or parent class) of           Futurecar
+         ^
+         |
+         |
+     futurecar    known as the subclass of class
+ 
+ */
+
+
+
+
+
+
 //     car,drive,fly are similler
 //     here one class inherite another class
 class car {
@@ -586,7 +603,7 @@ class car {
 }
 
 //define another class
-
+/*
 class FutureCar{ // FututrCar inherite another car
     var topSpeed = 250 // class FutureCar property
     
@@ -594,6 +611,21 @@ class FutureCar{ // FututrCar inherite another car
     func drive(){
         print("Driving at \(topSpeed)")
     }
+    
+   
+ */
+    class Futurecar : car {
+ 
+        //using override keyword here
+        // override func acess parent func
+        
+    override func drive(){
+        // access super drive function
+        super.drive()
+        print("and rocket boosting at 50")
+        print("Driving at \(topSpeed + 50)")
+    }
+    
     
     //again declare a function .
     // also this car can flying
@@ -610,7 +642,23 @@ myRide.drive() // call drive function
 
 //declare another constant and create an object
 //
-let myNewRide = FutureCar()
+let myNewRide = Futurecar()
+myNewRide.topSpeed
+myNewRide.drive()
+myNewRide.fly()
+
+
+//              Lesson - 11
+//              topics - ULKit
+
+
+ //UIKit is the framework that you'll user most often when developing iOS applications. It defines the core components of an iOS application, from labels and buttons to table views and navigation controllers.
+
+// UIKit is the framework that you'll user most often when developing iOS applications. It defines the core components of an iOS application, from labels and buttons to table views and navigation controllers. In this article, not only will we start our exploration of the UIKit framework, we will also explore the internals of an iOS project and the basic building blocks of iOS applications. 
+
+
+
+
 
 
 
