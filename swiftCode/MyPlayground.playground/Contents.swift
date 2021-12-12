@@ -1,4 +1,5 @@
 import UIKit
+import Darwin
 
 //        Lesson - 1
 
@@ -464,6 +465,216 @@ print(sum5)
 
 //                 Lesson - 9
 //                 Topics - classes
+
+// class can define custome datatype
+
+/*
+      Class Syntax
+      class name{
+       some datatypes
+ }
+ */
+/*
+  var  videoTitle = "iOS Development Kit"
+  var videoBoby = "TableView VS TableView controller"
+  var videoAuthor = "Nazmul Hasan"
+
+
+  var  videoTitle = "iOS Development Kit"
+  var videoBoby = "TableView VS TableView controller"
+  var videoAuthor = "Nazmul Hasan"
+
+*/
+
+
+/*
+         Classes and Object
+    A class definition is a like a
+    template or blueprint
+ 
+    When you create an actual
+    tangible instance of the class,
+    that instance is called an "object"
+ */
+
+ 
+class VideoPost{   // define a class VideoPost
+    // there are 3 class property
+    var title = ""
+    var body = ""
+    var author = ""
+    var numberOfComments = 0 // create a new property
+    
+    //define a new function in VideoPost class
+    func addComment(){
+        numberOfComments += 1
+    }
+    
+}
+          // define new VideoPost object
+          //  it has a title,body and author
+let myPost = VideoPost() //assign a constant
+
+myPost.title = "Hello Playground" // excess those 3 properties
+myPost.body = "Hello"
+myPost.author = "Nazmul Hasan"
+myPost.addComment()
+print(myPost.numberOfComments)
+
+print(myPost.author) // Nazmul Hasan
+
+// create 2nd VideoPost
+// this is different mySecondPost object
+
+let mySecondPost = VideoPost()
+
+mySecondPost.title = "Bye Playground" // excess those 3 properties
+mySecondPost.body = "Hello Alec"
+mySecondPost.author = "Alec Benjamin"
+
+print(mySecondPost.numberOfComments) // call function
+
+print(mySecondPost.author) // Alec Benjamin
+
+
+//              Lesson - 10
+//              topics - inheritance
+
+
+/*
+A class can inherit methods, properties, and other characteristics from another class. When one class inherits from another, the inheriting class is known as a subclass, and the class it inherits from is known as its superclass. Inheritance is a fundamental behavior that differentiates classes from other types in Swift.
+
+ Classes in Swift can call and access methods, properties, and subscripts belonging to their superclass and can provide their own overriding versions of those methods, properties, and subscripts to refine or modify their behavior. Swift helps to ensure your overrides are correct by checking that the override definition has a matching superclass definition.
+
+ Classes can also add property observers to inherited properties in order to be notified when the value of a property changes. Property observers can be added to any property, regardless of whether it was originally defined as a stored or computed property.
+ 
+ */
+
+
+// create a car class
+
+/*
+class car {
+    var topSpeed = 200 // class car property
+    
+    // declare a function
+    
+    func drive(){
+        print("Driving at \(topSpeed)")
+    }
+}
+
+
+// declare a constant and create an object name car
+
+let myRide = car()
+myRide.topSpeed
+myRide.drive() // calling drive function
+
+*/
+
+//     car,drive,fly are similler
+//     here one class inherite another class
+class car {
+    var topSpeed = 200 // class car property
+    
+    // declare a function
+    
+    func drive(){
+        print("Driving at \(topSpeed)")
+    }
+}
+
+//define another class
+
+class FutureCar{ // FututrCar inherite another car
+    var topSpeed = 250 // class FutureCar property
+    
+    // also declare a function
+    func drive(){
+        print("Driving at \(topSpeed)")
+    }
+    
+    //again declare a function .
+    // also this car can flying
+    
+    func fly(){
+        print("Flying")
+    }
+}
+// declare a constant and create an object name car
+
+let myRide = car()
+myRide.topSpeed
+myRide.drive() // call drive function
+
+//declare another constant and create an object
+//
+let myNewRide = FutureCar()
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
