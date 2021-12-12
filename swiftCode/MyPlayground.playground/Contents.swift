@@ -658,13 +658,37 @@ myNewRide.fly()
 
 
 
+//               Lesson - 12
+//               topics - initialzers
 
 
+//   declare a class name person
+class Person {
+      // declare 2 class properties
+    var name = ""
+    var age = 0 // set int age 0
+    
+    // ini initialzers function
+    
+   // init(n1 : String, age1 : Int){ // set some parameter
+    init(_name:String, _age:Int){
+        // set up your object
+        // here we customise our code
+      //  name = "Nazmul"
+        // age = 28
+            self.name = name
+            self.age = age
+        
+    }
+    
+}
 
-
-
-
-
+//  var new = Person() // create new person object exctually calling init fenction
+//var new = Person(n1: "Nazmul", age1: 28)
+var new = Person("Nazmul", 28)
+var new1 = Person()
+new1.name // Nazmul
+new1.age // 28
 
 
 
