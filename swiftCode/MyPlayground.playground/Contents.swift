@@ -663,6 +663,7 @@ myNewRide.fly()
 
 
 //   declare a class name person
+/*
 class Person {
       // declare 2 class properties
     var name = ""
@@ -689,6 +690,390 @@ var new = Person("Nazmul", 28)
 var new1 = Person()
 new1.name // Nazmul
 new1.age // 28
+
+*/
+
+
+//                       Lesson - 13
+//                       topics - options
+
+//
+
+ //create another class
+
+
+/*
+class Person {
+    
+    var name = ""
+}
+
+class BlogPost {
+    
+   // var title:String = ""
+    var title: String? // its an option  its could be NULL or it could be empth
+    var body = "hey"
+    var author: Person? //inside author we have person class option
+    var numbersofcomments = 0
+    
+}
+
+//    option propertes
+
+let post = BlogPost()
+
+print(post.body + " hello!") // print hey hello!
+
+//Optional Binding
+post.title = "yo" // if i comment this line my program will crash
+
+//if let actualTitle = post.title {
+   // print(actualTitle + " salute")
+//}
+// optional containers value
+print(post.title! + " salute") // optional properties
+
+
+// Testing for nil
+
+if post.title != nil {
+    // optional cintains value
+    print(post.title! + " salut")
+}
+if post.title == nil {
+    //optional contains no value
+}
+*/
+
+//       Lessson - 14
+//       Topics - Properties
+
+ 
+//Properties
+
+//Properties associate values with a particular class, structure, or enumeration. Stored properties store constant and variable values as part of an instance, whereas computed properties calculate (rather than store) a value. Computed properties are provided by classes, structures, and enumerations. Stored properties are provided only by classes and structures.
+
+ //Stored and computed properties are usually associated with instances of a particular type. However, properties can also be associated with the type itself. Such properties are known as type properties.
+
+//In addition, you can define property observers to monitor changes in a property’s value, which you can respond to with custom actions. Property observers can be added to stored properties you define yourself, and also to properties that a subclass inherits from its superclass.
+
+//You can also use a property wrapper to reuse code in the getter and setter of multiple properties.
+
+// here is 2 classes
+/*
+class Person {
+    
+    var name = ""
+}
+// from this blogpost class we can create many blogpost objects
+class BlogPost {
+    
+   // var title:String = ""
+    var title: String? // its an option  its could be NULL or it could be empth
+    var body = "hey"
+    var author: Person? //inside author we have person class option
+    var numbersofcomments = 0
+    
+    func addUpCommentCount(){
+        
+        //Do some calculations
+        //Arrive at a result
+       numbersofcomments = 0// use class properties
+    }
+    
+    
+    /*
+    // here creating two functions
+    // these 4 properties can be acess any of functions inside the class
+    func addComments(){
+        // if i declare a variable inside function that call local variable.this variable limited to scope of the function
+     
+        // prefoming some code
+        print(body)
+        print(title!)
+    }
+    
+    func shareArticle(){
+        print(body)
+        print(title!)
+    }
+     */
+    
+}
+
+// create a brand new object
+// i have create ablogpost object and assign it tittle
+let  MyPost = BlogPost()
+MyPost.title = "title of post" // assign a string on title properties
+MyPost.title                  // properties are independant between object
+
+// create second blogpost object
+
+let MypostTwo = BlogPost()
+MypostTwo.title = "Another Title"
+MypostTwo.title
+*/
+/*
+
+
+class Person {
+    
+    var name = ""
+}
+ 
+class BlogPost {
+    // computed property
+    // here is the logic
+    var fullTitle:String
+    {
+        // check that title and authot are not nil
+        if title != nil && author != nil {
+            return title! + " by " + author!.name
+            
+        }
+        else if title != nil {
+            return title!
+            
+        }
+        else {
+            return "NO Title"
+        }
+    }
+    
+    // var title:String = ""
+     var title: String? // its an option  its could be NULL or it could be empth
+     var body = "hey"
+     var author:Person? //inside author we have person class option
+     var numbersofcomments = 0
+}
+
+let author = Person()
+author.name = "Nazmul Hasan"
+
+let MyPost = BlogPost()
+MyPost.author = author // if we comment this line then dont print autho
+MyPost.title = "Learn Swift for Beginners" // if we comment this line then dont print title
+print(MyPost.fullTitle) // its a computer title property
+
+ */
+
+
+//           Lesson - 15
+//           topics - Initializers(part - 2
+
+
+// here two classes
+
+class Person {
+    var name = ""
+}
+
+class BlogPost{
+    // when declare a property in class there are basically 3 different reserve doing it
+    // 1. declare a property and initializa some sort of value write away
+    // 2. declare a property and initiliza it 0
+    // 3. declare a property and set it to optional it could be nil or could be a value
+    var title:String? // optional or unwrap that is cosider to ok
+    var body = "hey" // number 1
+    var author:Person? // number 3
+    var nummberOfComments = 0 // number 2
+    
+    // its call designsted initialiser
+    // that means this function is guranteed to those obligatins us are making sure that all the properties are in this was before use
+    
+    init(){
+        title = "My Title"
+        author = Person()
+    }
+    
+    //contrast we can make something that call a covinience initialiser and what that is use the conviconvinence keyword followd by initiliser methhod signature so might have something like this where inside this initiliser i only want to provide a custom title
+    convenience init(customTitle:String){
+        self.init()
+        title = customTitle
+    }
+    
+    
+}
+
+//let post = BlogPost()  // Blogpost is to be use
+
+let post = BlogPost (customTitle: "A Custom Title")
+
+
+
+ ///               Lesson -  16
+///                topics - arrays
+
+
+//    arrays - A collection of data
+//    orderd by indexs
+
+//Swift 4 arrays are used to store ordered lists of values of the same type. Swift 4 puts strict checking which does not allow you to enter a wrong type in an array, even by mistake.
+
+//If you assign a created array to a variable, then it is always mutable, which means you can change it by adding, removing, or changing its items; but if you assign an array to a constant, then that array is immutable, and its size and contents cannot be changed.
+
+// declare an array
+/*
+ var one = "dog"
+ var two = "cat"
+ var three = "bird"
+
+//one = "my " + one
+//print(one) print one element
+
+var four = ["dog" , "cat", "bird"]
+
+one = four[0]
+two = four[1]
+three = four[2]
+
+one = "my " + four[0]
+two = "my " + four[1]
+three = "my " + four[2]
+// declare loop for print array
+for i in 0...2{
+    print("my " + four[i])
+}
+// declare another loop for print array
+for item in four {
+    print("my " + item)
+}
+*/
+
+
+var one = "dog"
+var two = "cat"
+var three = "bird"
+
+var four = ["dog" , "cat", "bird"]
+var five = [String]()
+
+four += ["mouse" , "owl"]
+ // four -= ["mouse"] // its not working
+four.remove(at: 0) // delete an elements
+
+// change the item
+four[0] = "sparrow" // assign something new into that file
+print(four[0])
+
+// count array index
+four.count
+
+
+//             Lesson - 17
+//             Topics - Dictionaries
+
+
+// Swift 4 dictionaries are used to store unordered lists of values of the same type. Swift 4 puts strict checking which does not allow you to enter a wrong type in a dictionary even by mistake.
+
+// Swift 4 dictionaries use unique identifier known as a key to store a value which later can be referenced and looked up through the same key. Unlike items in an array, items in a dictionary do not have a specified order. You can use a dictionary when you need to look up values based on their identifiers.
+
+// A dictionary key can be either an integer or a string without a restriction, but it should be unique within a dictionary.
+
+// If you assign a created dictionary to a variable, then it is always mutable which means you can change it by adding, removing, or changing its items. But if you assign a dictionary to a constant, then that dictionary is immutable, and its size and contents cannot be changed.
+
+
+// Declaring a new Dictionary
+
+var carDB = [String:String]()
+// aading Key value pairs
+ carDB["JSD 238"] = "Blue Ferrari"
+ carDB["JSD 482"] = "Green Lamborghini"
+
+//  Retrieving data
+ carDB["ASD 238"]
+
+//Upadate a value for Kye
+carDB["JSD 238"] = "Red Ferrari"
+
+// remove a key-value pair
+// carDB["JSD 238"] = nil
+
+// Iterate over it
+for (license, car) in carDB {
+    print("\(car) has a license: \(license)")
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
