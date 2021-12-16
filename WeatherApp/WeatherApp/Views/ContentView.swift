@@ -10,13 +10,32 @@ import SwiftUI
 struct ContentView: View {
     //initial locationmanager
     @StateObject var locationManager = LocationManager()
+    //initial weathermanager
+    var weatherManager = WeatherManager()
+    @State var weather: ResponseBody?
     var body: some View {
        // Text("Hello, world!")
         VStack {
             //use else if statement cz location is optional
             
             if let location = locationManager.location {
-                Text("Your coordinate are: \(location.longitude), \(location.latitude)")
+                if let weather = weather {
+                    
+                 
+                    Text("Weather data fetched!")
+                }
+                else {
+                    LoadingView()
+                        .task {
+                        do {
+                            weather = try await weatherManager.getCurrentWeather(latitude: location.latitude, longitude: location.longitude)
+                        }
+                        catch{
+                            print("Error getting weather: \(error)")
+                        }
+                    }
+                }
+              //  Text("Your coordinate are: \(location.longitude), \(location.latitude)")
             }
                   else{
                       if locationManager.isLoading {

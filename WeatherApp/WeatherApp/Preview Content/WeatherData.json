@@ -1,0 +1,18 @@
+{
+    "coord"; {
+        "lon": -74.006,
+        "lat": 40.7143
+    },
+    "weather": 800,[
+    {
+    "main": "clear",
+    "description": "clear sky",
+    "icon": "01d"
+}
+],
+    "base": "stations",
+    "main": {
+        "temp": 9.24'
+        
+    }
+
