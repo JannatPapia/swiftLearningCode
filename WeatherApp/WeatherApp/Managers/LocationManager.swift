@@ -18,7 +18,7 @@ class LocationManager: NSObject, ObservableObject, CLLocationManagerDelegate {
     override init() {
         super.init()
         manager.delegate = self
-       // manager.requestLocation()
+        manager.requestLocation()
     }
     
     func requestLocation() {

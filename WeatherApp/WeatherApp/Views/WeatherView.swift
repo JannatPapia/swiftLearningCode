@@ -21,10 +21,10 @@ struct WeatherView: View {
                         .bold()
                         .font(.title)
                     
-                    Text("Today, \(Date().formatted(.dateTime.month().day().hour().minute()))")
+                    Text("Today,  \(Date().formatted(.dateTime.month().day().hour().minute()))")
                         .fontWeight(.light)
                 
-            }
+                }
             //.padding()
             .frame(maxWidth: .infinity, alignment: .leading)
             
@@ -54,7 +54,7 @@ struct WeatherView: View {
                 Spacer()
                     .frame(height: 80)
                 
-                AsyncImage(url: URL(string: "SodaPDF-converted-pedro-lastra-Nyvq2juw4_o-unsplash.png"))
+                AsyncImage(url: URL(string: "https://i0.wp.com/www.uniquenewsonline.com/wp-content/uploads/2020/12/Sunny-Leone-hot-photos.png"))
                 {
                     image in image
                         .resizable()
