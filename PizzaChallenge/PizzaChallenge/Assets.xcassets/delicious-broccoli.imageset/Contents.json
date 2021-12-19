@@ -1,11 +1,11 @@
 {
   "images" : [
     {
-      "filename" : "delicious-broccoli.jpg",
       "idiom" : "universal",
       "scale" : "1x"
     },
     {
+      "filename" : "delicious-broccoli.jpg",
       "idiom" : "universal",
       "scale" : "2x"
     },
