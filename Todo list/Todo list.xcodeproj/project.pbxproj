@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5C4D86BF277C87FA00CB216D /* ListViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5C4D86BE277C87FA00CB216D /* ListViewModel.swift */; };
 		5CA97157277B2F20009C3424 /* ListRowView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA97156277B2F20009C3424 /* ListRowView.swift */; };
 		5CA97159277B3AEB009C3424 /* AddView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CA97158277B3AEB009C3424 /* AddView.swift */; };
 		5CEDC064277ACB6300D10D73 /* Todo_listApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5CEDC063277ACB6300D10D73 /* Todo_listApp.swift */; };
@@ -17,6 +18,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5C4D86BE277C87FA00CB216D /* ListViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListViewModel.swift; sourceTree = "<group>"; };
 		5CA97156277B2F20009C3424 /* ListRowView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListRowView.swift; sourceTree = "<group>"; };
 		5CA97158277B3AEB009C3424 /* AddView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddView.swift; sourceTree = "<group>"; };
 		5CEDC060277ACB6300D10D73 /* Todo list.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Todo list.app"; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -38,9 +40,18 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5C4D86BD277C87A700CB216D /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+				5C4D86BE277C87FA00CB216D /* ListViewModel.swift */,
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
 		5CEDC057277ACB6300D10D73 = {
 			isa = PBXGroup;
 			children = (
+				5C4D86BD277C87A700CB216D /* ViewModels */,
 				5CEDC062277ACB6300D10D73 /* Todo list */,
 				5CEDC061277ACB6300D10D73 /* Products */,
 			);
@@ -164,6 +175,7 @@
 			files = (
 				5CF00819277B8BE500FCE50F /* ItemModels.swift in Sources */,
 				5CA97159277B3AEB009C3424 /* AddView.swift in Sources */,
+				5C4D86BF277C87FA00CB216D /* ListViewModel.swift in Sources */,
 				5CEDC064277ACB6300D10D73 /* Todo_listApp.swift in Sources */,
 				5CEDC073277ACEB500D10D73 /* ListView.swift in Sources */,
 				5CA97157277B2F20009C3424 /* ListRowView.swift in Sources */,

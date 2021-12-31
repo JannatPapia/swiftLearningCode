@@ -9,6 +9,9 @@ import SwiftUI
 
 struct ListView: View {
     
+   @EnvironmentObject var listViewModel: ListViewModel
+    
+    /*
     @State var items: [ItemModel] = [
         ItemModel(title: "This is the first title!", isCompleted: false),
         ItemModel(title: "This is the first second!", isCompleted: true),
@@ -18,15 +21,22 @@ struct ListView: View {
       //"This is the second!",
      // "Third!"
     ]
-    
+    */
     var body: some View {
         List {
-              ForEach(items) { item in
+            ForEach(listViewModel.items) { item in
                   ListRowView(item: item)
+                    .onTapGesture {
+                        withAnimation(.linear){
+                            listViewModel.updateItem(item: item)
+                        }
+                    }
                // Text("Hi")
           //  ForEach(items, id: \.self) {item in
                // ListRowView(title: item)
             }
+            .onDelete(perform: listViewModel.deleteItem)
+            .onMove(perform: listViewModel.moveItem )
            // ListRowView(title: "This is the first title!")
       //  Text("Hello, World!")
           //  HStackExtractedView()
@@ -36,6 +46,16 @@ struct ListView: View {
         .navigationBarItems(leading: EditButton(), trailing: NavigationLink("Add", destination: AddView())
                             )
     }
+    /*
+    func deleteItem(indexSet: IndexSet){
+        items.remove(atOffsets: indexSet)
+
+    }
+    
+    func moveItem(from: IndexSet, to: Int){
+        items.move(fromOffsets: from, toOffset: to)
+    }
+    */
 }
 
 struct ListView_Previews: PreviewProvider {
@@ -43,7 +63,7 @@ struct ListView_Previews: PreviewProvider {
         NavigationView{
             ListView()
         }
-        
+        .environmentObject(ListViewModel())
     }
 }
 
