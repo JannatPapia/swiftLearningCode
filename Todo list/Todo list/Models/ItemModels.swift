@@ -9,7 +9,7 @@ import Foundation
 
 //Immutable Struct
 
-struct ItemModel: Identifiable {
+struct ItemModel: Identifiable, Codable {
     let id: String  // use random string
     let title: String
     let isCompleted: Bool
