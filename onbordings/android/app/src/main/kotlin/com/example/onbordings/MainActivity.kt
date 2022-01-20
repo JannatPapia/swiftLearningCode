@@ -1,6 +1,0 @@
-package com.example.onbordings
-
-import io.flutter.embedding.android.FlutterActivity
-
-class MainActivity: FlutterActivity() {
-}
